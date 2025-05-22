@@ -3,9 +3,22 @@
 // - Use JavaScript to dynamically update the DOM based on user actions.
 const simulateClickButton = document.querySelector("#simulate-click")
 const Input = document.querySelector("#user-input")
+
 function simulateClick(elementId, message) {
   const element = document.getElementById(elementId)
-  element.textContent = message
+  const errorMessage = document.getElementById('error-message')
+  if(element){
+    element.textContent = message
+    if(errorMessage){
+      errorMessage.classList.add('hidden')
+    }
+  } else {
+    if(errorMessage){
+      errorMessage.textContent = `Error: Element with ID ${elementId} does not exist`
+      errorMessage.classList.remove('hidden')
+    }
+  }
+  
 }
 
 document.addEventListener("DOMContentLoaded", () => {

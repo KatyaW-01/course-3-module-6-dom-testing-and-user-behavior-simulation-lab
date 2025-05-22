@@ -29,9 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // Step 2: DOM Manipulation Functions
 // - Implement functions to add, update, and remove DOM elements.
 // - Ensure all elements are dynamically created with appropriate attributes and content.
-function addElementToDOM() {
-
+function addElementToDOM(elementId, message) {
+  const element = document.getElementById(elementId)
+  if(element) {
+    element.textContent = message
+  }
 }
+
 function removeElementFromDOM() {
 
 }
@@ -43,4 +47,4 @@ function removeElementFromDOM() {
 // Step 4: Reusable Utilities
 // - Create modular utility functions, such as createElement(tag, attributes).
 // - Ensure all functions follow DRY principles for maintainability.
-module.exports = {simulateClick}
+module.exports = {simulateClick,addElementToDOM}

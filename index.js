@@ -47,7 +47,20 @@ function removeElementFromDOM(elementId) {
 function handleFormSubmit(event) {
   const input = document.querySelector("#user-input")
   const content = document.getElementById('dynamic-content')
-  content.textContent = input.value
+  const errorMessage = document.getElementById('error-message')
+  if(input.value === "" || input.value.length === 0){
+    if(errorMessage){
+      errorMessage.textContent = "Input cannot be empty"
+      errorMessage.classList.remove('hidden')
+    }
+  } else {
+    content.textContent = input.value
+    if(errorMessage){
+      errorMessage.classList.add('hidden')
+    }
+  }
+  
+
 }
 
 // Step 3: Error Handling

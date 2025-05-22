@@ -36,8 +36,9 @@ function addElementToDOM(elementId, message) {
   }
 }
 
-function removeElementFromDOM() {
-
+function removeElementFromDOM(elementId) {
+  const element = document.getElementById(elementId)
+  element.remove()
 }
 
 // Step 3: Error Handling
@@ -47,4 +48,4 @@ function removeElementFromDOM() {
 // Step 4: Reusable Utilities
 // - Create modular utility functions, such as createElement(tag, attributes).
 // - Ensure all functions follow DRY principles for maintainability.
-module.exports = {simulateClick,addElementToDOM}
+module.exports = {simulateClick,addElementToDOM,removeElementFromDOM}

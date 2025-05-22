@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // - Implement functions to add, update, and remove DOM elements.
 // - Ensure all elements are dynamically created with appropriate attributes and content.
 function simulateClick(elementId, message) {
+  addElementToDOM(elementId, message)
+}
+
+function addElementToDOM(elementId, message) {
   const element = document.getElementById(elementId)
   const errorMessage = document.getElementById('error-message')
   if(element){
@@ -30,13 +34,6 @@ function simulateClick(elementId, message) {
       errorMessage.classList.remove('hidden')
     }
   } 
-}
-
-function addElementToDOM(elementId, message) {
-  const element = document.getElementById(elementId)
-  if(element) {
-    element.textContent = message
-  }
 }
 
 function removeElementFromDOM(elementId) {
@@ -59,8 +56,6 @@ function handleFormSubmit(event) {
       errorMessage.classList.add('hidden')
     }
   }
-  
-
 }
 
 // Step 3: Error Handling
